@@ -29,7 +29,6 @@
             yarn
             typescript
             rslint
-            javascript-typescript-langserver
           ];
         };
       });
