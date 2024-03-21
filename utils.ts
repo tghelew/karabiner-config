@@ -1,4 +1,4 @@
-import { To, KeyCode, Manipulator, KarabinerRules } from "./rulesTypes";
+import { To, KeyCode, Modifier, Manipulator, KarabinerRules } from "./rulesTypes";
 
 /**
  * Custom way to describe a command in a layer
@@ -18,7 +18,8 @@ type HyperKeySublayer = {
  * e.g. Hyper + O ("Open") is the "open applications" layer, I can press
  * e.g. Hyper + O + G ("Google Chrome") to open Chrome
  */
-export function createHyperSubLayer(
+export function createSubLayer(
+  modifier: Modifier[] =  [ "command", "control", "shift", "option" ],
   sublayer_key: KeyCode,
   commands: HyperKeySublayer,
   allSubLayerVariables: string[]
@@ -33,12 +34,7 @@ export function createHyperSubLayer(
       from: {
         key_code: sublayer_key,
         modifiers: {
-          mandatory: [
-            "command",
-            "control",
-            "shift",
-            "option",
-          ],
+          mandatory: modifier,
         },
       },
       to_after_key_up: [
@@ -100,9 +96,10 @@ export function createHyperSubLayer(
  * have all the hyper variable names in order to filter them and make sure only one
  * activates at a time
  */
-export function createHyperSubLayers(subLayers: {
-  [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
-}): KarabinerRules[] {
+export function createSubLayers(modifier: Modifier[] = [ "command", "control", "shift", "option" ]
+                                     ,subLayers: {
+                                       [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
+                                     }): KarabinerRules[] {
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
   ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
@@ -119,12 +116,7 @@ export function createHyperSubLayers(subLayers: {
                 key_code: key as KeyCode,
                 modifiers: {
                   // Mandatory modifiers are *not* added to the "to" event
-                  mandatory: [
-                    "left_command",
-                    "left_control",
-                    "left_shift",
-                    "left_option",
-                  ],
+                  mandatory: modifier,
                 },
               },
             },
@@ -132,7 +124,8 @@ export function createHyperSubLayers(subLayers: {
         }
       : {
           description: `Hyper Key sublayer "${key}"`,
-          manipulators: createHyperSubLayer(
+          manipulators: createSubLayer(
+            modifier,
             key as KeyCode,
             value,
             allSubLayerVariables

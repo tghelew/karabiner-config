@@ -2,7 +2,7 @@ import {writeFileSync } from "fs";
 import { KarabinerRules } from "./rulesTypes";
 import { GlobalParameter, GlobalComplexRulesParameter } from "./globalTypes";
 import { Devices } from "./devicesTypes";
-import { createHyperSubLayers, app, open } from "./utils";
+import { createSubLayers, app, open } from "./utils";
 
 const globals: GlobalParameter  = {
   ask_for_confirmation_before_quitting: false,
@@ -115,7 +115,7 @@ const rules: KarabinerRules[] = [
       },
     ],
   },
-  ...createHyperSubLayers({
+  ...createSubLayers(["command","control","shift", "option"], {
     // o = "Open" applications
     o: {
       b: app("Safari"),
@@ -126,18 +126,16 @@ const rules: KarabinerRules[] = [
       s: app("Slack"),
       m: app("Messages"),
     },
-    // s = "System"
-    s: {
-      p: {
-        to: [
-          {
-            // Emoji picker
-            key_code: "spacebar",
-            modifiers: ["right_control", "right_command"],
-          },
-        ],
-      },
-
+    // e = "system Emoji"
+    e: {
+      description: "Show the system emoji picker",
+      to: [
+        {
+          // Emoji picker
+          key_code: "spacebar",
+          modifiers: ["right_control", "right_command"],
+        },
+      ],
     },
 
     // r = "Raycast"
