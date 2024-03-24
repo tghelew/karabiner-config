@@ -97,7 +97,7 @@
             ]
           },
           {
-            "description": "Hyper Key sublayer \"o\"",
+            "description": "Modifier Key(s) sublayer \"o\"",
             "manipulators": [
               {
                 "description": "Toggle Hyper sublayer o",
@@ -116,7 +116,7 @@
                 "to_after_key_up": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_o",
+                      "name": "modifier_sublayer_o",
                       "value": 0
                     }
                   }
@@ -124,7 +124,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_o",
+                      "name": "modifier_sublayer_o",
                       "value": 1
                     }
                   }
@@ -132,12 +132,32 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_e",
+                    "name": "modifier_sublayer_e",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_r",
+                    "name": "modifier_sublayer_h",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_j",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_k",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_l",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_r",
                     "value": 0
                   }
                 ]
@@ -161,7 +181,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -185,7 +205,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -209,7 +229,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -233,7 +253,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -257,7 +277,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -281,7 +301,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -289,10 +309,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Messages.app'"
+                    "shell_command": "open -a 'Mail.app'"
                   }
                 ],
-                "description": "Open -a 'Messages.app'",
+                "description": "Open -a 'Mail.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
@@ -305,7 +325,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -313,7 +333,7 @@
             ]
           },
           {
-            "description": "Hyper Key + e",
+            "description": "Modifier Key(s) + e",
             "manipulators": [
               {
                 "description": "Show the system emoji picker",
@@ -342,7 +362,119 @@
             ]
           },
           {
-            "description": "Hyper Key sublayer \"r\"",
+            "description": "Modifier Key(s) + h",
+            "manipulators": [
+              {
+                "description": "Application windows",
+                "to": [
+                  {
+                    "key_code": "down_arrow",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + j",
+            "manipulators": [
+              {
+                "description": "Previous space",
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + k",
+            "manipulators": [
+              {
+                "description": "Next space",
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + l",
+            "manipulators": [
+              {
+                "description": "Next active window",
+                "to": [
+                  {
+                    "key_code": "f4",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) sublayer \"r\"",
             "manipulators": [
               {
                 "description": "Toggle Hyper sublayer r",
@@ -361,7 +493,7 @@
                 "to_after_key_up": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_r",
+                      "name": "modifier_sublayer_r",
                       "value": 0
                     }
                   }
@@ -369,7 +501,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_r",
+                      "name": "modifier_sublayer_r",
                       "value": 1
                     }
                   }
@@ -377,12 +509,32 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_o",
+                    "name": "modifier_sublayer_o",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_e",
+                    "name": "modifier_sublayer_e",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_h",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_j",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_k",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_l",
                     "value": 0
                   }
                 ]
@@ -406,7 +558,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_r",
+                    "name": "modifier_sublayer_r",
                     "value": 1
                   }
                 ]
@@ -430,10 +582,550 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_r",
+                    "name": "modifier_sublayer_r",
                     "value": 1
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) sublayer \"e\"",
+            "manipulators": [
+              {
+                "description": "Toggle Hyper sublayer e",
+                "type": "basic",
+                "from": {
+                  "key_code": "e",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                },
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "modifier_sublayer_e",
+                      "value": 0
+                    }
+                  }
+                ],
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "modifier_sublayer_e",
+                      "value": 1
+                    }
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_h",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_j",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_k",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_l",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_c",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_r",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_f",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_m",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_equal_sign",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_hyphen",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "description": "move window to the next desktop",
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_option"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_e",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "move window to the previous desktop",
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_option"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_e",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "move window left",
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_e",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "move window down",
+                "to": [
+                  {
+                    "key_code": "down_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_e",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "move window up",
+                "to": [
+                  {
+                    "key_code": "up_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_e",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "move window right",
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control",
+                      "left_option"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_e",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + h",
+            "manipulators": [
+              {
+                "description": "move window to the left half",
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + j",
+            "manipulators": [
+              {
+                "description": "move window to the bottom half",
+                "to": [
+                  {
+                    "key_code": "down_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + k",
+            "manipulators": [
+              {
+                "description": "move window to the top half",
+                "to": [
+                  {
+                    "key_code": "up_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + l",
+            "manipulators": [
+              {
+                "description": "move window to the right half",
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + c",
+            "manipulators": [
+              {
+                "description": "center the  window",
+                "to": [
+                  {
+                    "key_code": "c",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + r",
+            "manipulators": [
+              {
+                "description": "restore window layout",
+                "to": [
+                  {
+                    "key_code": "r",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + f",
+            "manipulators": [
+              {
+                "description": "toggle fullscreen",
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + m",
+            "manipulators": [
+              {
+                "description": "hide window",
+                "to": [
+                  {
+                    "key_code": "h",
+                    "modifiers": [
+                      "left_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + equal_sign",
+            "manipulators": [
+              {
+                "description": "make window larger",
+                "to": [
+                  {
+                    "key_code": "period",
+                    "modifiers": [
+                      "left_command",
+                      "left_control",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "equal_sign",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + hyphen",
+            "manipulators": [
+              {
+                "description": "make window smaller",
+                "to": [
+                  {
+                    "key_code": "comma",
+                    "modifiers": [
+                      "left_command",
+                      "left_control",
+                      "left_shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "hyphen",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
               }
             ]
           }

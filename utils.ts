@@ -107,7 +107,7 @@ export function createSubLayers(modifier: Modifier[] = [ "command", "control", "
   return Object.entries(subLayers).map(([key, value]) =>
     "to" in value
       ? {
-          description: `Hyper Key + ${key}`,
+          description: `Modifier Key(s) + ${key}`,
           manipulators: [
             {
               ...value,
@@ -123,7 +123,7 @@ export function createSubLayers(modifier: Modifier[] = [ "command", "control", "
           ],
         }
       : {
-          description: `Hyper Key sublayer "${key}"`,
+          description: `Modifier Key(s) sublayer "${key}"`,
           manipulators: createSubLayer(
             modifier,
             key as KeyCode,
@@ -135,7 +135,7 @@ export function createSubLayers(modifier: Modifier[] = [ "command", "control", "
 }
 
 function generateSubLayerVariableName(key: KeyCode) {
-  return `hyper_sublayer_${key}`;
+  return `modifier_sublayer_${key}`;
 }
 
 /**

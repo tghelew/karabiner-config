@@ -10,9 +10,10 @@
     "prettier": "^3.2",
     "tsm": "^2.2.2"
   },
-  "scripts": {
-    "build": "yarn run check && tsm rules.ts",
-    "check": "tsc --noEmit rules.ts",
-    "watch": "nodemon --exec yarn build -e ts"
+  "scripts"  : {
+    "build"  : "yarn run check && tsm rules.ts",
+    "check"  : "tsc --noEmit rules.ts",
+    "watch"  : "nodemon --exec yarn build -e ts",
+    "deploy" : "./deploy.sh"
   }
 }
