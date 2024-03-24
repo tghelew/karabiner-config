@@ -14,3 +14,6 @@ yarn-error.log*
 
 result
 .direnv
+
+assets/**/*
+automatic_backups/*
