@@ -32,10 +32,17 @@ _run_checks () {
         message "Error" "Missing program(s): ${missing[@]}"
     fi
 }
+_run_checks "yarn" "cp" "launchctl" "realpath"
 #--- END Validation
 
-_run_checks "yarn" "cp" "launchctl"
+
+_target_dir="$(realpath -s ~/.config/karabiner)"
+_current_dir="${0:P:h}"
 
 yarn run build && \
-    cp -f karabiner.json ~/.config/karabiner && \
+    {
+        if [ "${_target_dir}" != "${_current_dir}" ]; then
+            cp -f karabiner.json ~/.config/karabiner
+        fi
+    } && \
     launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
