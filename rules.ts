@@ -79,6 +79,24 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
+    description: "Meh Key (⌃⌥⇧)",
+    manipulators: [
+      {
+        description: "Globe (fn) -> Meh Key",
+        from: {
+          key_code: "fn",
+        },
+        to: [
+          {
+            key_code: "left_shift",
+            modifiers: [ "left_control", "left_option"],
+          },
+        ],
+        type: "basic",
+      },
+    ]
+  },
+  {
     description: "Left Arrow (←)",
     manipulators: [
       {
