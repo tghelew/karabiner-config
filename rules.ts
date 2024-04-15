@@ -159,12 +159,12 @@ const rules: KarabinerRules[] = [
       ],
     },
     h: {
-      description: "Application windows",
+      description: "Switch Application",
       to: [
         {
-          // show Application windows
-          key_code: "down_arrow",
-          modifiers: ["right_control"],
+          // switch applications
+          key_code: "s",
+          modifiers: ["right_control", "right_command"],
         },
       ],
     },

@@ -386,12 +386,13 @@
             "description": "Modifier Key(s) + h",
             "manipulators": [
               {
-                "description": "Application windows",
+                "description": "Switch Application",
                 "to": [
                   {
-                    "key_code": "down_arrow",
+                    "key_code": "s",
                     "modifiers": [
-                      "right_control"
+                      "right_control",
+                      "right_command"
                     ]
                   }
                 ],
