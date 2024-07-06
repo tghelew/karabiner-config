@@ -144,7 +144,7 @@ const rules: KarabinerRules[] = [
       t: app("kitty"),
       e: open("raycast://script-commands/memacs"),
       f: app("Finder"),
-      s: app("Slack"),
+      //s: app("Slack"),
       m: app("Mail"),
     },
     // e = "system Emoji"
@@ -319,6 +319,54 @@ const rules: KarabinerRules[] = [
         {
 
           key_code: "right_arrow",
+          modifiers: ["left_command", "left_control"],
+
+        },
+      ],
+    },
+    // move window to the top left quarter
+    y: {
+      description: "move window to the top left quarter",
+      to: [
+        {
+
+          key_code: "y",
+          modifiers: ["left_command", "left_control"],
+
+        },
+      ],
+    },
+    // move window to the top right quarter
+    o: {
+      description: "move window to the top right quarter",
+      to: [
+        {
+
+          key_code: "o",
+          modifiers: ["left_command", "left_control"],
+
+        },
+      ],
+    },
+    // move window to the bottom left quarter
+    n: {
+      description: "move window to the bottom left quarter",
+      to: [
+        {
+
+          key_code: "n",
+          modifiers: ["left_command", "left_control"],
+
+        },
+      ],
+    },
+    // move window to the bottom right quarter
+    period: {
+      description: "move window to the bottom right quarter",
+      to: [
+        {
+
+          key_code: "period",
           modifiers: ["left_command", "left_control"],
 
         },

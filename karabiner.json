@@ -306,30 +306,6 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Slack.app'"
-                  }
-                ],
-                "description": "Open -a 'Slack.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "s",
-                  "modifiers": {
-                    "mandatory": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "modifier_sublayer_o",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
                     "shell_command": "open -a 'Mail.app'"
                   }
                 ],
@@ -666,6 +642,26 @@
                   },
                   {
                     "type": "variable_if",
+                    "name": "modifier_sublayer_y",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_o",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_n",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "modifier_sublayer_period",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "modifier_sublayer_c",
                     "value": 0
                   },
@@ -971,6 +967,118 @@
                 "type": "basic",
                 "from": {
                   "key_code": "l",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + y",
+            "manipulators": [
+              {
+                "description": "move window to the top left quarter",
+                "to": [
+                  {
+                    "key_code": "y",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "y",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + o",
+            "manipulators": [
+              {
+                "description": "move window to the top right quarter",
+                "to": [
+                  {
+                    "key_code": "o",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + n",
+            "manipulators": [
+              {
+                "description": "move window to the bottom left quarter",
+                "to": [
+                  {
+                    "key_code": "n",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "n",
+                  "modifiers": {
+                    "mandatory": [
+                      "control",
+                      "shift",
+                      "option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "description": "Modifier Key(s) + period",
+            "manipulators": [
+              {
+                "description": "move window to the bottom right quarter",
+                "to": [
+                  {
+                    "key_code": "period",
+                    "modifiers": [
+                      "left_command",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "period",
                   "modifiers": {
                     "mandatory": [
                       "control",
